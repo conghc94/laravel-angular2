@@ -1,0 +1,3 @@
+<button class="btn btn-primary" (click)="onGetCustomers()">Get Customers</button>
+<hr>
+<app-customer *ngFor="let customer of customers" [customer]="customer" (customerDeleted)="onDeleted($event)"></app-customer>
