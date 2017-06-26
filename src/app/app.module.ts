@@ -13,6 +13,9 @@ import { DrinkfoodComponent } from './drinkfood/drinkfood.component';
 import { DrinksfoodsComponent } from './drinksfoods/drinksfoods.component';
 import { NewDrinkfoodComponent } from './new-drinkfood/new-drinkfood.component';
 import { DrinkfoodService } from "./drinkfood.service";
+import { OrderComponent } from './order/order.component';
+import { OrdersComponent } from './orders/orders.component';
+import { NewOrderComponent } from './new-order/new-order.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DrinkfoodService } from "./drinkfood.service";
     NewCustomerComponent,
     DrinkfoodComponent,
     DrinksfoodsComponent,
-    NewDrinkfoodComponent
+    NewDrinkfoodComponent,
+    OrderComponent,
+    OrdersComponent,
+    NewOrderComponent
   ],
   imports: [
     BrowserModule,
