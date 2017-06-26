@@ -10,4 +10,25 @@
             {{ drinkfood.price }}
         </div>
     </div>
+    <div class="panel-footer">
+        <div *ngIf="editing">
+            <div class="col-xs-12">
+                <div class="col-xs-4">
+                    <input  type="text" class="form-control" name="name" id="name" [(ngModel)]="editValueName" />
+                </div>
+                <div class="col-xs-4">
+                    <input  type="text" class="form-control" name="description" id="description" [(ngModel)]="editValueDescription">
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="editValuePrice">
+                </div>
+            </div>
+            <a href="#" [routerLink]="['/drinksfoods']" (click)="onUpdate()">Save</a>
+            <a href="#" [routerLink]="['/drinksfoods']" (click)="onCancel()">Cancel</a>
+        </div>
+        <div *ngIf="!editing">
+            <a href="#" [routerLink]="['/drinksfoods']" (click)="onEdit()">Edit</a>
+            <a href="#" [routerLink]="['/drinksfoods']" (click)="onDelete()">Delete</a>
+        </div>
+    </div>
 </div>

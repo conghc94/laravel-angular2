@@ -26,7 +26,6 @@ export class CustomerComponent implements OnInit {
     onUpdate() {
         this.customerService.updateCustomer(this.customer.id, this.editValue)
         .subscribe(
-            
             (customer: Customer) => {
                 this.customer.name = this.editValue;
                 this.editValue = '';

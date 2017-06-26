@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from "@angular/http";
 import { Drinkfood } from '../drinkfood.interface';
 import { DrinkfoodService } from '../drinkfood.service';
 
@@ -22,5 +23,13 @@ export class DrinksfoodsComponent implements OnInit {
             (error: Response) => console.log(error)
         );
     }
-
+    
+    onDeleted(drinkfood: Drinkfood) {
+        const position = this.drinksfoods.findIndex(
+            (drinkfoodEl: Drinkfood) => {
+                return drinkfoodEl.id == drinkfood.id;
+            }
+        );
+        this.drinksfoods.splice(position, 1);
+    }
 }

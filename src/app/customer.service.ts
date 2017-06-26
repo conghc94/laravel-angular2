@@ -12,11 +12,11 @@ export class CustomerService {
     addCustomer(name: string) {
         const body = JSON.stringify({name: name});
         const headers = new Headers({'Content-Type': 'aplication/json'});
-        return this.http.post('http://localhost:8888/laravel5-repository-pattern/public/api/customer', body, {headers: headers});
+        return this.http.post('http://localhost:8888/back-end/public/api/customer', body, {headers: headers});
     }
     
     getCustomers(): Observable<any> {
-        return this.http.get('http://localhost:8888/laravel5-repository-pattern/public/api/customers')
+        return this.http.get('http://localhost:8888/back-end/public/api/customers')
         .map(
             (response: Response) => {
                 return response.json().customers;
@@ -27,13 +27,13 @@ export class CustomerService {
     updateCustomer(id: number, newName: string) {
         const body = JSON.stringify({name: newName});
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.put('http://localhost:8888/laravel5-repository-pattern/public/api/customer/' + id, body, {headers: headers})
+        return this.http.put('http://localhost:8888/back-end/public/api/customer/' + id, body, {headers: headers})
         .map(
             (response: Response) => response.json()
         );
     }
     
     deleteCustomer(id: number) {
-        return this.http.delete('http://localhost:8888/laravel5-repository-pattern/public/api/customer/' +id);
+        return this.http.delete('http://localhost:8888/back-end/public/api/customer/' +id);
     }
 }

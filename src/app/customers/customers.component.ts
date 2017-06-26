@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from "@angular/http";
-
 import { Customer } from "../customer.interface";
 import { CustomerService } from "../customer.service"
+
 @Component({
     selector: 'app-customers',
     templateUrl: './customers.component.html',
@@ -14,7 +14,6 @@ export class CustomersComponent implements OnInit {
     constructor(private customerService: CustomerService) { }
 
     ngOnInit() {
-
     }
   
     onGetCustomers() {
